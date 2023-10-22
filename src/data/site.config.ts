@@ -8,10 +8,10 @@ interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-	author: 'DanielCG',
-	title: 'Astro Theme OpenBlog',
-	description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+	author: 'Harry Tran',
+	title: 'Server Restart Engineer',
+	description: 'Software Engineering Blog',
 	lang: 'en-GB',
 	ogLocale: 'en_GB',
-	shareMessage: 'Share this post' // Message to share a post on social media
+	shareMessage: 'Destroy, restart thing the right way'
 }
