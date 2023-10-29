@@ -3,11 +3,12 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import { remarkReadingTime } from './src/utils/readTime.ts'
+import { siteConfig } from './src/data/site.config.ts'
 
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://phuhung273.github.io', // Write here your website url
-	base: '/server-restart-engineer',
+	base: siteConfig.base,
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		drafts: true,

@@ -5,6 +5,7 @@ interface SiteConfig {
 	lang: string
 	ogLocale: string
 	shareMessage: string
+	base: string
 }
 
 export const siteConfig: SiteConfig = {
@@ -13,5 +14,6 @@ export const siteConfig: SiteConfig = {
 	description: 'Software Engineering Blog',
 	lang: 'en-GB',
 	ogLocale: 'en_GB',
-	shareMessage: 'Destroy, restart thing the right way'
+	shareMessage: 'Destroy, restart thing the right way',
+	base: '/server-restart-engineer'
 }
