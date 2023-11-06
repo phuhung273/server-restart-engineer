@@ -21,7 +21,7 @@
 		"url": "https://github.com/phuhung273/server-restart-engineer"
 	},
 	"scripts": {
-		"dev": "tinacms dev -c 'astro dev'",
+		"dev": "tinacms dev -c \"astro dev\"",
 		"start": "astro dev",
 		"build": "astro build",
 		"sync": "astro sync",
