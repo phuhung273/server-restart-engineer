@@ -3,7 +3,7 @@ heroImage: /src/assets/images/lambda-docker.jpg
 category: Cloud
 description: Docker as Lambda function
 pubDate: 2023-11-10T17:00:00.000Z
-draft: true
+draft: false
 tags:
   - AWS
   - Docker
@@ -11,4 +11,11 @@ tags:
 title: Docker as Lambda
 ---
 
-> Sound interesting. But why on earth should I use Docker instead of some simple lines of Python
+> Sound interesting. But why on earth should I use Docker instead of some simple lines of Python ?
+
+## Use Case
+**OS configuration, install additional software,...**
+
+For normal Lambda, you can only install language-specific libraries, like Python's pip, Node's npm or Java's maven.
+
+In this blog, we'll implement a [Crawler Lambda that must install Chrome driver at OS level with Selenium](https://selenium-python.readthedocs.io/installation.html#drivers)
