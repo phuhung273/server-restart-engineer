@@ -35,11 +35,11 @@
 	"dependencies": {
 		"@astrojs/rss": "3.0.0",
 		"@tinacms/cli": "^1.5.33",
-		"astro": "3.6.4",
+		"astro": "4.0.7",
 		"tinacms": "^1.5.28"
 	},
 	"devDependencies": {
-		"@astrojs/mdx": "1.1.5",
+		"@astrojs/mdx": "2.0.2",
 		"@astrojs/sitemap": "3.0.3",
 		"@astrojs/tailwind": "5.0.3",
 		"@pagefind/default-ui": "^1.0.4",
