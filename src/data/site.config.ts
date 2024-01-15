@@ -15,5 +15,5 @@ export const siteConfig: SiteConfig = {
 	lang: 'en-GB',
 	ogLocale: 'en_GB',
 	shareMessage: 'Destroy, restart thing the right way',
-	base: '/server-restart-engineer'
+	base: '/'
 }
