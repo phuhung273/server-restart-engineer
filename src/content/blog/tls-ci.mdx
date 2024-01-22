@@ -1,0 +1,26 @@
+---
+heroImage: /src/assets/images/ca-chain-ci.png
+category: 'Security'
+description: TLS testing right on your CI/CD pipeline
+pubDate: 2024-01-22T17:00:00.000Z
+draft: false
+tags:
+  - SSL/TLS
+  - Security
+  - CI/CD
+title: TLS testing on CI pipeline
+---
+
+> CI unit/intergration test should mimic the same behaviour on production
+
+## Situation
+- Your production database is TLS enabled
+- Unit test must ensure the same TLS behaviour, eg: unit test on a Postgres docker image
+
+<strong>Possible solutions:</strong>
+- Use a dev database: costly (must always be up running) and have to erase entirely after pipeline finish
+- Spawn a new database with docker
+
+## Objective
+- Create an script that can access both a Postgres docker image (dev) and a RDS database (prod)
+- Creating a CA chain that can work with both prod and dev
