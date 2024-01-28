@@ -24,3 +24,9 @@ pnpm-debug.log*
 .DS_Store
 
 node_modules
+
+# credentials
+*.pem
+*.key
+*.req
+*.crt
