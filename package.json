@@ -36,7 +36,7 @@
 		"@astrojs/rss": "4.0.5",
 		"@tinacms/cli": "^1.5.39",
 		"astro": "4.4.4",
-		"tinacms": "^1.5.28"
+		"tinacms": "^1.5.29"
 	},
 	"devDependencies": {
 		"@astrojs/mdx": "2.1.1",
