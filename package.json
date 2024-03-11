@@ -35,7 +35,7 @@
 	"dependencies": {
 		"@astrojs/rss": "4.0.5",
 		"@tinacms/cli": "^1.5.40",
-		"astro": "4.4.11",
+		"astro": "4.4.15",
 		"tinacms": "^1.5.28"
 	},
 	"devDependencies": {
