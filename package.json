@@ -52,7 +52,7 @@
 		"eslint-plugin-jsx-a11y": "^6.8.0",
 		"lint-staged": "^15.2.5",
 		"mdast-util-to-string": "^4.0.0",
-		"motion": "^10.17.0",
+		"motion": "^10.18.0",
 		"pagefind": "^1.1.0",
 		"prettier": "^3.3.0",
 		"prettier-config-standard": "^7.0.0",
