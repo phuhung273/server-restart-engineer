@@ -44,7 +44,7 @@
 		"@astrojs/tailwind": "5.1.0",
 		"@pagefind/default-ui": "^1.1.0",
 		"@tailwindcss/typography": "0.5.13",
-		"@typescript-eslint/parser": "^7.13.0",
+		"@typescript-eslint/parser": "^7.13.1",
 		"clsx": "2.1.1",
 		"cypress": "^13.10.0",
 		"eslint": "^8.57.0",
