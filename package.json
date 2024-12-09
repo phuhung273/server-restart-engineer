@@ -33,7 +33,7 @@
 		"pre-commit": "lint-staged"
 	},
 	"dependencies": {
-		"@astrojs/rss": "4.0.9",
+		"@astrojs/rss": "4.0.10",
 		"@tinacms/cli": "^1.6.12",
 		"astro": "4.16.17",
 		"tinacms": "^2.4.0"
