@@ -73,7 +73,7 @@ const {
 	document.addEventListener('DOMContentLoaded', function () {
 		const showAnimations = localStorage.getItem('animations') === 'true'
 
-		if (showAnimations) {
+		if (showAnimations & document.querySelector(".effect")) {
 			animate(
 				'.effect',
 				{
