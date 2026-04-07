@@ -15,8 +15,8 @@ importers:
         specifier: 5.18.1
         version: 5.18.1(@types/node@25.5.0)(jiti@1.21.7)(rollup@4.60.1)(typescript@5.9.3)(yaml@2.8.3)
       astro-font:
-        specifier: ^0.0.72
-        version: 0.0.72
+        specifier: ^1.1.0
+        version: 1.1.0
     devDependencies:
       '@astrojs/mdx':
         specifier: 4.3.14
@@ -2713,8 +2713,8 @@ packages:
     resolution: {integrity: sha512-+QDcgc7e+au6EZ0YjMmRRjNoQo5bDMlaR45aWDoFsuxQTCM9qmCHRoiKJPELgckJ8Wmr7vcfpa9eCDHBFh6G4w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro-font@0.0.72:
-    resolution: {integrity: sha512-FUjIerovSg2lsfJfvvqY23hgvc++gHi69ikFkxm0mqO3MPFykK5ppeUuROUjhNbE6vwdD8MpiJOy1CR5S0g/lQ==}
+  astro-font@1.1.0:
+    resolution: {integrity: sha512-hj1A0MkaJTeaArBpf1m9s4Nxu1Bn9h0QiEPeR9Dfjle25pT4CH4higzuadWzCRSvhGO2SzbM11YwZEF+cmLDxg==}
 
   astro@5.18.1:
     resolution: {integrity: sha512-m4VWilWZ+Xt6NPoYzC4CgGZim/zQUO7WFL0RHCH0AiEavF1153iC3+me2atDvXpf/yX4PyGUeD8wZLq1cirT3g==}
@@ -9925,7 +9925,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro-font@0.0.72: {}
+  astro-font@1.1.0: {}
 
   astro@5.18.1(@types/node@25.5.0)(jiti@1.21.7)(rollup@4.60.1)(typescript@5.9.3)(yaml@2.8.3):
     dependencies:
