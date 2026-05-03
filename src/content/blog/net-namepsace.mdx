@@ -1,0 +1,109 @@
+---
+heroImage: /src/assets/images/lambda-docker.jpg
+category: Linux
+description: Configure point-to-point net namespaces
+pubDate: 2026-05-03T17:00:00.000Z
+draft: false
+tags:
+  - Linux
+title: '[Container from scratch] Part 1: Configure point-to-point net namespaces'
+---
+
+> Exploring one of the most-used Linux namespaces: the net namespace
+
+## What are we building here ?
+
+2 Linux net namespaces connecting to each other
+
+## Create 2 net namespaces
+
+```bash
+ip netns add red
+ip netns add blue
+
+# View created ns
+ip netns
+```
+
+### Compare links in new namespace and host
+
+View ip links in <strong>host</strong> :
+
+```bash
+ip link
+```
+
+```console
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:85:bc:44 brd ff:ff:ff:ff:ff:ff
+```
+
+View ip links in <strong>red</strong> namespace:
+
+```bash
+ip netns exec red ip link
+
+# Or shorter command
+ip -n red link
+```
+
+```console
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+```
+
+> You will also see different result for command like route, arp,...
+
+## Create a virtual Ethernet cable between net namespaces
+
+In Linux net namespace, this cable is a <strong>veth ip link</strong>.
+
+```bash
+ip link add veth-red type veth peer name veth-blue
+```
+
+When first created, both sides of the veth link aren't associated to any namespaces yet. Inspecting <strong>host</strong> , we can see 2 new links:
+
+```bash
+$ ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 00:15:5d:85:bc:44 brd ff:ff:ff:ff:ff:ff
+3: veth-blue@veth-red: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 1e:a3:93:a9:49:ed brd ff:ff:ff:ff:ff:ff
+4: veth-red@veth-blue: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 36:fb:ef:e5:8c:b8 brd ff:ff:ff:ff:ff:ff
+```
+
+## Link 2 net namespaces
+
+Set the link to <strong>red</strong> namespace:
+
+```bash
+ip link set veth-red netns red
+```
+
+Now 1 of the 2 new links is allocated to <strong>red</strong> namespace
+
+```console
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+4: veth-red@if3: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 36:fb:ef:e5:8c:b8 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+```
+
+Notice the link is currently DOWN as it has no IP address associated
+
+Also set the link to <strong>blue</strong> namespace:
+
+```bash
+ip link set veth-blue netns blue
+```
+
+## References
+
+- [KodeKloud Network Namespaces Basics Explained in 15 Minutes](https://www.youtube.com/watch?v=j_UUnlVC2Ss)
+- [RedHat Building containers by hand using namespaces: The net namespace](https://www.redhat.com/en/blog/net-namespaces)
