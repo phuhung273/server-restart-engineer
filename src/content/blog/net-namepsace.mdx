@@ -1,5 +1,5 @@
 ---
-heroImage: /src/assets/images/lambda-docker.jpg
+heroImage: /src/assets/images/p2p-netns.png
 category: Linux
 description: Configure point-to-point net namespaces
 pubDate: 2026-05-03T17:00:00.000Z
@@ -102,6 +102,78 @@ Also set the link to <strong>blue</strong> namespace:
 ```bash
 ip link set veth-blue netns blue
 ```
+
+## Assign IPs for 2 peers
+
+To bring up the link, both peers need to have their own IP addresses:
+
+```bash
+ip -n red addr add 192.168.15.1 dev veth-red
+ip -n blue addr add 192.168.15.2 dev veth-blue
+```
+
+Now bring up the link:
+
+```bash
+ip -n red link set veth-red up
+ip -n blue link set veth-blue up
+```
+
+## Ping the peer!!!
+
+Congrats! You made it to the end of the tutorial. 2 net namespaces are now setup successfully. Test it with ping:
+
+```bash
+ip netns exec red ping 192.168.15.2
+```
+
+Success output looks like this:
+
+```console
+PING 192.168.15.2 (192.168.15.2) 56(84) bytes of data.
+64 bytes from 192.168.15.2: icmp_seq=1 ttl=64 time=0.034 ms
+64 bytes from 192.168.15.2: icmp_seq=2 ttl=64 time=0.056 ms
+64 bytes from 192.168.15.2: icmp_seq=3 ttl=64 time=0.056 ms
+```
+
+## Troubleshooting
+
+If ping doesn't work, have a look at below known issues:
+
+### Loopback is DOWN
+
+```bash
+ip -n red link
+```
+
+If its state is actually DOWN:
+
+```console
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+```
+
+Bring LOOPBACK up:
+
+```bash
+ip -n red link set lo up
+```
+
+> State UNKNOWN doesn't mean it is broken
+
+### No route detected
+
+```bash
+ip -n red route
+```
+
+If output is empty, we can add a default route:
+
+```bash
+ip -n red route add default via 192.168.15.1
+```
+
+And <strong>blue</strong> namespace also.
 
 ## References
 
