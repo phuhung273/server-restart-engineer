@@ -1,2 +1,9 @@
+allowBuilds:
+  better-sqlite3: true
+  core-js: true
+  cypress: true
+  esbuild: true
+  protobufjs: true
+  sharp: true
 onlyBuiltDependencies:
   - cypress
