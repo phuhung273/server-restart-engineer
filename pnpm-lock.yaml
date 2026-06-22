@@ -26,13 +26,13 @@ importers:
         version: 3.7.2
       '@astrojs/tailwind':
         specifier: 6.0.2
-        version: 6.0.2(astro@6.4.8(@types/node@24.12.4)(jiti@1.21.7)(rollup@4.62.2)(yaml@2.9.0))(tailwindcss@3.4.19(yaml@2.9.0))
+        version: 6.0.2(astro@6.4.8(@types/node@24.12.4)(jiti@1.21.7)(rollup@4.62.2)(yaml@2.9.0))(tailwindcss@4.3.1)
       '@pagefind/default-ui':
         specifier: ^1.5.2
         version: 1.5.2
       '@tailwindcss/typography':
         specifier: 0.5.20
-        version: 0.5.20(tailwindcss@3.4.19(yaml@2.9.0))
+        version: 0.5.20(tailwindcss@4.3.1)
       '@tinacms/cli':
         specifier: ^2.4.4
         version: 2.4.4(@codemirror/language@6.0.0)(@types/node@24.12.4)(abstract-level@1.0.4)(immer@10.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.62.2)(scheduler@0.27.0)(slate-dom@0.114.0(slate@0.114.0))(slate@0.114.0)(use-sync-external-store@1.6.0(react@18.3.1))(yaml@2.9.0)
@@ -91,8 +91,8 @@ importers:
         specifier: 3.6.0
         version: 3.6.0
       tailwindcss:
-        specifier: 3.4.19
-        version: 3.4.19(yaml@2.9.0)
+        specifier: 4.3.1
+        version: 4.3.1
       tinacms:
         specifier: ^3.9.1
         version: 3.9.1(@types/node@24.12.4)(abstract-level@1.0.4)(immer@10.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.27.0)(slate-dom@0.114.0(slate@0.114.0))(slate@0.114.0)(typescript@5.9.3)(use-sync-external-store@1.6.0(react@18.3.1))
@@ -6567,6 +6567,9 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
+  tailwindcss@4.3.1:
+    resolution: {integrity: sha512-hk+TB1m+K8CYNrP6rjQaq/Y+4Zylwpa87mLYBKCunwnnQ9p+fHb7kmSfGqyEJoxF/O6CDyABWVFEafNSYKll+Q==}
+
   tar-fs@2.1.4:
     resolution: {integrity: sha512-mDAjwmZdh7LTT6pNleZ05Yt65HC3E+NiQzl672vQG38jIrehtJk/J3mNwIg+vShQPcLF/LV7CMnDW6vjj6sfYQ==}
 
@@ -7371,13 +7374,13 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 4.4.3
 
-  '@astrojs/tailwind@6.0.2(astro@6.4.8(@types/node@24.12.4)(jiti@1.21.7)(rollup@4.62.2)(yaml@2.9.0))(tailwindcss@3.4.19(yaml@2.9.0))':
+  '@astrojs/tailwind@6.0.2(astro@6.4.8(@types/node@24.12.4)(jiti@1.21.7)(rollup@4.62.2)(yaml@2.9.0))(tailwindcss@4.3.1)':
     dependencies:
       astro: 6.4.8(@types/node@24.12.4)(jiti@1.21.7)(rollup@4.62.2)(yaml@2.9.0)
       autoprefixer: 10.5.0(postcss@8.5.15)
       postcss: 8.5.15
       postcss-load-config: 4.0.2(postcss@8.5.15)
-      tailwindcss: 3.4.19(yaml@2.9.0)
+      tailwindcss: 4.3.1
     transitivePeerDependencies:
       - ts-node
 
@@ -9038,6 +9041,11 @@ snapshots:
     dependencies:
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.19(yaml@2.9.0)
+
+  '@tailwindcss/typography@0.5.20(tailwindcss@4.3.1)':
+    dependencies:
+      postcss-selector-parser: 6.0.10
+      tailwindcss: 4.3.1
 
   '@tanstack/react-table@8.21.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -15049,6 +15057,8 @@ snapshots:
     transitivePeerDependencies:
       - tsx
       - yaml
+
+  tailwindcss@4.3.1: {}
 
   tar-fs@2.1.4:
     dependencies:
