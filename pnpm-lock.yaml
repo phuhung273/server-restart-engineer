@@ -70,11 +70,11 @@ importers:
         specifier: ^1.5.2
         version: 1.5.2
       prettier:
-        specifier: ^3.9.4
-        version: 3.9.4
+        specifier: ^3.9.6
+        version: 3.9.6
       prettier-config-standard:
         specifier: ^7.0.0
-        version: 7.0.0(prettier@3.9.4)
+        version: 7.0.0(prettier@3.9.6)
       prettier-plugin-astro:
         specifier: ^0.14.1
         version: 0.14.1
@@ -5905,8 +5905,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.9.4:
-    resolution: {integrity: sha512-yWG/o/4oJfo036EKAfK6ACAoDOfHeRHx4tuxkfBZiauURiaSmYwlpOr5LQqKtIkRD2z1PLteme2WoxEnj4tHTg==}
+  prettier@3.9.6:
+    resolution: {integrity: sha512-OpN0zzVdiaiAhxpuuj5efpIS4sY9j7bY6uR5mnj5yPzGkdkjNKSJeUThPb60Jw29QuAZgA4o+/iB49kFiaBX6g==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -14237,19 +14237,19 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-config-standard@7.0.0(prettier@3.9.4):
+  prettier-config-standard@7.0.0(prettier@3.9.6):
     dependencies:
-      prettier: 3.9.4
+      prettier: 3.9.6
 
   prettier-plugin-astro@0.14.1:
     dependencies:
       '@astrojs/compiler': 2.13.1
-      prettier: 3.9.4
+      prettier: 3.9.6
       sass-formatter: 0.7.9
 
   prettier@2.8.8: {}
 
-  prettier@3.9.4: {}
+  prettier@3.9.6: {}
 
   pretty-bytes@5.6.0: {}
 
