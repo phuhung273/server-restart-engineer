@@ -57,7 +57,7 @@
 		"mdast-util-to-string": "^4.0.0",
 		"motion": "^14.3.0",
 		"pagefind": "^1.5.2",
-		"prettier": "^3.9.6",
+		"prettier": "^3.9.10",
 		"prettier-config-standard": "^7.0.0",
 		"prettier-plugin-astro": "^1.1.1",
 		"reading-time": "^1.5.0",
