@@ -49,7 +49,7 @@
 		"@typescript-eslint/parser": "^8.71.2",
 		"clsx": "2.1.1",
 		"cypress": "^16.1.1",
-		"eslint": "^10.11.0",
+		"eslint": "^10.13.0",
 		"eslint-plugin-astro": "^3.2.1",
 		"eslint-plugin-jsx-a11y": "^6.10.2",
 		"husky": "^9.1.7",
